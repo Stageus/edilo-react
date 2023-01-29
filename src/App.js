@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useMediaQuery } from "react-responsive"
 import { createGlobalStyle } from "styled-components";
 
+import Schedule from "./components/schedule/Schedule";
 import FooterComponent from "./components/header/Footer"
 import HeaderComponent from "./components/header/Header"
 import NotFound from "./components/NotFound";
@@ -33,8 +34,9 @@ const App =() => {
                 {
                 /*
                 <Route path="/" element={<Main/>}/>
-                <Route path="/schedule/*" element={<Schedule/>}/>
                 */}
+                <Route path="/schedule/*" element={<Schedule/>}/>
+                
                 <Route path="/community/*" element={<Community/>}/>
                 <Route path="/writepost" element={<Write/>}/>
                 <Route path="/myPage/*" element={<MyPage/>}/>
