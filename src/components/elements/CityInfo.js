@@ -53,10 +53,10 @@ const CityInfo = (props) => {
                         <Div fontSize='20px' marginLeft='8px'>{cityName}</Div>
                     </FlexDiv>
                     <Div fontWeight='600' marginBottom='24px'>
-                        명동, 국립중앙박물관, 롯데월드, 경복궁, 창덕궁
+                        도쿄 스카이트리, 신주쿠 교엔, 지브리 미술관, 센소지
                     </Div>
                     <CityInfoText>
-                        대한민국의 수도인 서울은 현대적인 고층 빌딩, 첨단 기술의 지하철, 대중문화와 사찰, 고궁, 노점상이 공존하는 대도시입니다. 주목할 만한 명소로는 곡선으로 이루어진 외관과 옥상 공원을 특징으로 하는 초현대적 디자인의 동대문디자인플라자, 한때 7,000여 칸의 방이 자리하던 경복궁, 회화나무와 소나무 고목이 있는 조계사가 있습니다.
+                        전통과 미래가 공존하는 메가시티 도쿄는 수많은 즐길 거리로 가득합니다. 테마 카페에서 고급 요리에 이르기까지 이색적인 아이디어를 자랑하는 도쿄의 레스토랑과 식당을 찾아보세요. 아키하바라에서 최신 전자제품과 각종 기기를 둘러보고 일본 애니메이션 문화를 체험하세요. 도쿄의 패션 수도인 하라주쿠와 시부야에서 생생한 젊음의 문화를 경험하세요. 도쿄의 사원 중 가장 유명한 센소지가 있습니다.
                     </CityInfoText>
                     <FlexDiv justifyContent='space-around' marginTop='48px'>
                         <Button color='white' backgroundColor='mainColor' width='140px' padding='12px' borderRadius='8px' cursor='pointer' fontSize='14px' onClick={makePlanClickEvent}>

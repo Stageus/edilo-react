@@ -39,7 +39,7 @@ const Setting = () => {
 
     console.log(userData)
 
-    const url = '/post/my/all'
+    const url = '/post/my/all?'
 
     useEffect(() => {
         if (!isLogin) {
@@ -47,31 +47,27 @@ const Setting = () => {
         }
     })
 
-    //useFetch('/post/my/all', 'GET', '?postPage=2', true)
-
     return (
-        <Suspense fallback={<Div>로딩중...</Div>}>
-            <React.Fragment>
-                <FlexDiv>
-                    <FlexDiv width='38%' flexDirection='column' borderRight='4px dotted #E1E4E6' padding='0 14px 0 0'>
-                        <LabelDiv margin='0 0 8px'>이름</LabelDiv>
-                        <Div>{userData && userData.userInfo.userName}</Div>
-                        <LabelDiv>아이디</LabelDiv>
-                        <Div>{userData && userData.userInfo.userId}</Div>
-                        <LabelDiv>이메일</LabelDiv>
-                        <EmailDiv>{userData && userData.userInfo.userEmail}</EmailDiv>
-                    </FlexDiv>
-                    <FlexDiv margin='0 30px' width='50%' flexDirection='column'>
-                        <LabelDiv margin='0 0 8px'>닉네임</LabelDiv>
-                        <Nickname userNickname={userData && userData.userInfo.userNickname} />
-                        <Btn width='96px'>비밀번호 변경</Btn>
-                        <Btn width='96px' color='red'>회원탈퇴</Btn>
-                    </FlexDiv>
+        <React.Fragment>
+            <FlexDiv>
+                <FlexDiv width='38%' flexDirection='column' borderRight='4px dotted #E1E4E6' padding='0 14px 0 0'>
+                    <LabelDiv margin='0 0 8px'>이름</LabelDiv>
+                    <Div>{userData && userData.userInfo.userName}</Div>
+                    <LabelDiv>아이디</LabelDiv>
+                    <Div>{userData && userData.userInfo.userId}</Div>
+                    <LabelDiv>이메일</LabelDiv>
+                    <EmailDiv>{userData && userData.userInfo.userEmail}</EmailDiv>
                 </FlexDiv>
-                <Div fontSize='14px' color='letterGray' margin='76px 0 4px' padding='0 0 12px' borderBottom='4px dotted #E1E4E6'>내가 작성한 글</Div>
-                <PostList url={url}/>
-            </React.Fragment>
-        </Suspense>
+                <FlexDiv margin='0 30px' width='50%' flexDirection='column'>
+                    <LabelDiv margin='0 0 8px'>닉네임</LabelDiv>
+                    <Nickname userNickname={userData && userData.userInfo.userNickname} userIndex={userData && userData.userInfo.userIndex}/>
+                    <Btn width='96px'>비밀번호 변경</Btn>
+                    <Btn width='96px' color='red'>회원탈퇴</Btn>
+                </FlexDiv>
+            </FlexDiv>
+            <Div fontSize='14px' color='letterGray' margin='76px 0 4px' padding='0 0 12px' borderBottom='4px dotted #E1E4E6'>내가 작성한 글</Div>
+            <PostList url={url} />
+        </React.Fragment>
     )
 }
 

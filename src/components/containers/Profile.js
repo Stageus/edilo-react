@@ -29,10 +29,7 @@ export const Icon = styled(Img)`
 
 
 const Profile = () => {
-    const navigate = useNavigate()
     const userData = useRecoilValue(userDataState)
-    const isLogin = useRecoilValue(isLoginState)
-    const setUserData = useSetRecoilState(userDataState)
 
 
     return (

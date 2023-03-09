@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
 import styled from "styled-components";
 
+import { currentPostState } from '../../recoil/backendState'
 import { Div, FlexDiv, Img } from "../../styles/style";
+
 
 const LabelDiv = styled(Div)`
     font-size: 14px;
@@ -22,27 +25,26 @@ const StyledLink = styled(Link)`
 
 const CommunityPostPre = (props) => {
     const { eachPost } = props
-    console.log(eachPost)
-    const { posttitle, postdate, postwriter, postimgurl, postindex } = eachPost
-    console.log(postdate)
+    const { posttitle, postdate, postwriter, postimgurl, citycategory, citycountry, cityname, postindex } = eachPost
     const date = postdate.substr(0, 10)
     const [year, month, day] = date?.split('-')
 
-    // 클릭해서 게시글 상세페이지로 넘어갈 때, 현재 게시글 state 초기화
 
     return (
         <FlexDiv flexDirection='column' borderBottom='1px solid #E1E4E6'>
             <FlexDiv justifyContent='space-between'>
                 <LabelDiv>
-                    {/* {areaTag.cityCategory +
-                        (areaTag.cityCountry ? ' · ' + areaTag.cityCountry : '') +
-                        (areaTag.cityName ? ' · ' + areaTag.cityName : '')} */}
+                    {(citycategory != null ? citycategory : '') +
+                        (citycountry ? ' · ' + citycountry : '') +
+                        (cityname ? ' · ' + cityname : '')}
                 </LabelDiv>
                 <LabelDiv>
                     {year}.{month}.{day}
                 </LabelDiv>
             </FlexDiv>
-            <StyledLink to={`/post?postIndex=${postindex}`}>
+            <StyledLink to={`post`} state={{
+                'postindex': postindex
+            }}>
                 <FlexDiv justifyContent='space-between' margin='10px 0 0 0'>
                     <FlexDiv fontSize='20px' margin='0 10px 10px 0' cursor='pointer' flexDirection='column'>
                         {posttitle}

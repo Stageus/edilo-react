@@ -128,7 +128,7 @@ const HeaderComponent = (props) => {
                         </FlexDiv>
                     }
                     {/* </StyledLink> */}
-                    <StyledLink to="/post">
+                    <StyledLink to="/community">
                         <Div cursor='pointer' color='black' fontSize='14px'>COMMUNITY</Div>
                     </StyledLink>
                     {

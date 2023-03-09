@@ -1,4 +1,4 @@
-// url , method, data, query (boolean)
+// url , method, data, query (boolean), auth (boolean)
 const useFetch = async (url, method, data, query, auth) => {
     console.log(url, method, data, query)
     if (method == 'POST') {

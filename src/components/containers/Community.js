@@ -13,7 +13,7 @@ const Community = () => {
             <CommunityNav />
             <Routes>
                 <Route path="" element={<CommunityMain />} />
-                <Route path="/post" element={<CommunityPost />} />
+                <Route path="post/*" element={<CommunityPost />} />
             </Routes>
         </FlexDiv>
     )

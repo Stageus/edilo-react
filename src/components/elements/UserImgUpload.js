@@ -10,15 +10,14 @@ const UserImgUpload = () => {
     const [userImg, setUserImg] = useRecoilState(userImgState)
     const inputRef = useRef(null)
 
-    console.log(userImg)
-    // https://cdn.pixabay.com/photo/2021/08/24/01/44/cat-6569156__340.jpg
 
     const onUploadImageBtnClick = () => {
         inputRef.current.click()
     }
 
-    const imgUploadAction = async (reader) => {
-        const imgResult = reader.result
+    const imgUploadAction = async (img) => {
+        console.log('이미지 변경 요청')
+        
         try {
             const response = await fetch(process.env.REACT_APP_BACK_HOST_IP + "/account/profileImg", {
                 "method": "PUT",
@@ -28,14 +27,14 @@ const UserImgUpload = () => {
                     "Content-Type": "application/json"
                 },
                 "body": JSON.stringify({
-                    "imgValue": imgResult,
+                    "imgValue": img,
                 })
             })
             const result = await response.json()
             console.log(result)
 
             if (result.success) {
-                setUserImg(imgResult);
+                setUserImg(img);
             }
             else {
                 alert(`${result.message}`)
@@ -51,10 +50,8 @@ const UserImgUpload = () => {
         const reader = new FileReader();
         reader.readAsDataURL(file); // 업로드한 파일 URL로
         reader.onloadend = () => {  // 읽기 완료되면
-            imgUploadAction(reader)
+            imgUploadAction(reader.result)
         };
-
-        console.log(userImg)
     }
 
 

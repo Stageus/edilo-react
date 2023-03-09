@@ -362,35 +362,10 @@ export const postListState = atom({
 
 export const currentPostState = atom({
     key: 'currentPost',
-    default: {
-        'areaTag': {
-            'cityCategory': '유럽',
-            'cityCountry': '프랑스',
-            'cityName': '파리'
-        },
-        'postTitle': '강릉 여행입니다/강릉 여행입니다/강릉 여행입니다/강릉 여행입니다/강릉 여행입니다/강릉 여행입니다/강릉 여행입니다/강릉 여행입니다/강릉 여행입니다/강릉 여행입니다/강릉 여행100자',
-        'postDate': '2022-01-01',
-        'postWriter': '뚜벅이 여행가',
-        'postImg': ['https://eomisae.co.kr/files/attach/images/100572/573/731/080/00f5f916a83dcc308af32c241e2dab20.jpg', 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/e2/b1/c7/caption.jpg?w=500&h=-1&s=1', 'https://eomisae.co.kr/files/attach/images/100572/573/731/080/00f5f916a83dcc308af32c241e2dab20.jpg'],
-        'postCategory': '',
-        'like': 15,
-        'scrap': 12,
-        'view': 33, // API 명세서에 있나??
-        'postContent': '<div>강릉시는 대한민국 강원도 동해안 중부에 있는 시이다. 서울과 비슷한 위도에 위치한 영동 지방 최대 도시이다. 서쪽으로 태백산맥이 뻗어 있고, 동쪽으로 동해가 펼쳐져 있으며, 해안선 길이는 73.72km이다.<br> 기온 1°C, 풍향 서, 풍속 3m/s, 습도 36%<div/>',
-        'postIndex': '',
-        'comment': [{
-            'commentDate': '2023-02-03',
-            'commentWriter': '여행가123',
-            'commentWriterImg': 'https://i.pinimg.com/736x/57/43/39/574339961a29d3429a9a90c212abfd34.jpg',
-            'commentContent': '좋은 정보 감사합니다!!!!!!!',
-            'commentIndex': 0
-        },
-        {
-            'commentDate': '2023-02-03',
-            'commentWriter': '뚜벅이 여행가',
-            'commentWriterImg': 'https://i.pinimg.com/736x/57/43/39/574339961a29d3429a9a90c212abfd34.jpg',
-            'commentContent': '좋은 댓글 감사합니다!!!!!!!',
-            'commentIndex': 1
-        }]
-    }
+    default: {}
+})
+
+export const currentCommentState = atom({
+    key: 'currentComment',
+    default: {}
 })

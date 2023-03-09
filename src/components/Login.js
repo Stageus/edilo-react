@@ -88,7 +88,7 @@ const Login = () => {
                 if (result.success) {
                     console.log(result)
                     setIsLogin(true)
-                    navigate('/')
+                    navigate(-1)
                 }
                 else {
                     console.log(`${result.message}`)
